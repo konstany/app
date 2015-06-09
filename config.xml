@@ -23,6 +23,7 @@
     -->
     <preference name="permissions"                value="none"/>
     <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->

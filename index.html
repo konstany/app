@@ -1,64 +1,45 @@
 <html>  
 <head>  
 <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
-<script>  
-    function showContent(link) {  
-  
-        var cont = document.getElementById('contentBody');  
-        var loading = document.getElementById('loading');  
-  
-        cont.innerHTML = loading.innerHTML;  
-  
-        var http = createRequestObject();  
-        if( http )   
-        {  
-            http.open('get', link);  
-            http.onreadystatechange = function ()   
-            {  
-                if(http.readyState == 4)   
-                {  
-                    cont.innerHTML = http.responseText;  
-                }  
-            }  
-            http.send(null);      
-        }  
-        else   
-        {  
-            document.location = link;  
-        }  
-    }  
-  
-    // создание ajax объекта  
-    function createRequestObject()   
-    {  
-        try { return new XMLHttpRequest() }  
-        catch(e)   
-        {  
-            try { return new ActiveXObject('Msxml2.XMLHTTP') }  
-            catch(e)   
-            {  
-                try { return new ActiveXObject('Microsoft.XMLHTTP') }  
-                catch(e) { return null; }  
-            }  
-        }  
-    }  
-</script>  
+  <html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
+<script type="text/javascript" src="jquery.js"></script>  
 </head>  
   
 <body>  
-
-<form>  
-        <input onclick="showContent('page1.html')" type="button" value="Страница 1">  
-        <input onclick="showContent('page2.html')" type="button" value="Страница 2">  
-    </form>  
+  
+    <p>привет всем</p>
+       <div id="content"></div>  
       
-    <div id="contentBody">  
-    </div>  
+    <script>  
+        function show()  
+        {  
+            $.ajax({  
+                url: "http://myrusakov.ru/redirect-javascript.html",  
+                cache: false,  
+                success: function(html){  
+                    $("#content").html(html);  
+                }  
+            });  
+        }  
+      
+        $(document).ready(function(){  
+            show();  
+            setTimeout('Sec()',0);  
+        });  
+    </script>  
+</body>  
+</html> 
+</script>  
+</head>  
+  <style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: #22313F url(http://hello-site.ru//main/images/preloads/puff.svg) center center no-repeat;background-size:38px;}</style>
+<div id="hellopreloader"><div id="hellopreloader_preload"></div>
+<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1000);};</script>
+
+<p>привет всем</p>
+<body>  
   
-    <div id="loading" style="display: none">  
-    Идет загрузка...  
-    </div>  
-  
-     <link rel="import" href="http://example.com/elements.html">
+    
 </body>  
 </html>

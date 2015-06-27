@@ -14,7 +14,7 @@
 
     
 
-    <gap:splash src="http://static8.depositphotos.com/1012074/882/v/110/depositphotos_8827015-Vector-illustration-of-single-news-icon.jpg" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="https://cloud.githubusercontent.com/assets/12755459/8392510/015a70b0-1d20-11e5-86ce-c903dcec80f1.png" gap:platform="android" gap:density="ldpi" />
 
    
 
